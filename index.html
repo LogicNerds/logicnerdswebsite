@@ -411,11 +411,30 @@
     width: 100%;
   }
 
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 101;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+  }
+
   @media (max-width: 768px) {
     .pillars { grid-template-columns: 1fr; }
-    .signals { grid-template-columns: 1fr; }
-    .blog-placeholder { grid-template-columns: 1fr; }
     .cta-box { flex-direction: column; align-items: flex-start; }
+    .nav-hamburger { display: flex; }
     .nav-links {
       display: none;
       flex-direction: column;
@@ -425,32 +444,13 @@
       right: 0;
       background: #ffffff;
       border-bottom: 1px solid var(--border);
-      padding: 1rem 2rem;
-      gap: 1rem;
+      padding: 1.5rem 2rem;
+      gap: 1.25rem;
       z-index: 99;
+      list-style: none;
     }
     .nav-links.open { display: flex; }
-    .nav-hamburger { display: flex; }
-  }
-
-  .nav-hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-  }
-
-  .nav-hamburger span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: var(--text);
-    border-radius: 2px;
-    transition: all 0.2s;
+    .nav-links a { font-size: 16px; }
   }
 </style>
 </head>
