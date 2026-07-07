@@ -872,7 +872,13 @@ function showResults() {
     email: userEmail,
     otdi, otdiPct, otdiBand: otdiBand.status, otdiBody: otdiBand.body, otdiSignal: otdiBand.signal,
     lcfi, lcfiPct, lcfiBand: lcfiBand.status, lcfiBody: lcfiBand.body, lcfiSignal: lcfiBand.signal,
-    overallPct, dims
+    overallPct, dims,
+    answers: questions.map((q, i) => ({
+      section: q.section,
+      question: q.text,
+      answer: answers[i] !== null ? q.options[answers[i]] : 'Not answered',
+      score: answers[i] !== null ? q.scores[answers[i]] : 0
+    }))
   };
 
   // Fire emails
