@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report Pack Install Guide | Logic Nerds</title>
+<meta name="description" content="How to install a Logic Nerds Salesforce report pack: requirements, package install, folder access, dashboards and relabeling (RP) fields.">
+<link rel="canonical" href="https://www.logicnerds.net/install/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Logic Nerds">
+<meta property="og:title" content="Report Pack Install Guide | Logic Nerds">
+<meta property="og:description" content="How to install a Logic Nerds Salesforce report pack: requirements, package install, folder access, dashboards and relabeling (RP) fields.">
+<meta property="og:url" content="https://www.logicnerds.net/install/">
+<meta property="og:image" content="https://www.logicnerds.net/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<!-- Analytics: add the tracking snippet here before promoting the site. -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/logic-nerds-mark.png" alt="" width="44" height="26">Logic Nerds</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/reports/">Report Packs</a></li>
+        <li><a href="/setup/">Custom Setups</a></li>
+        <li><a href="/install/" aria-current="page">Install Guide</a></li>
+        <li><a class="btn" href="https://calendar.app.google/puWBrE7kxSBasrjN8" target="_blank" rel="noopener">Book a call</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <h1>Installing a report pack</h1>
+    <p class="lead">Everything you need to get a pack running in your org. Plan on about <span class="todo">time</span>.</p>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0;border-top:0">
+  <div class="wrap">
+    <nav class="toc" aria-label="On this page">
+      <ul>
+        <li><a href="#before">Before you start</a></li>
+        <li><a href="#package">Install the package</a></li>
+        <li><a href="#access">Give your team access</a></li>
+        <li><a href="#my-reports">Rep &ldquo;My&rdquo; reports</a></li>
+        <li><a href="#dashboards">Dashboards</a></li>
+        <li><a href="#rp-labels">About the (RP) labels</a></li>
+        <li><a href="#help">Getting help</a></li>
+      </ul>
+    </nav>
+
+    <div class="doc">
+      <h2 id="before">Before you start</h2>
+      <ul class="plain">
+        <li>Salesforce Professional Edition or higher</li>
+        <li>Log in as a user who can install packages (usually a System Administrator)</li>
+        <li>The install link from your order email</li>
+        <li><span class="todo">Anything else to check first</span></li>
+      </ul>
+
+      <h2 id="package">Install the package</h2>
+      <p><span class="todo">Steps for opening the install link, choosing who to install for, and confirming.</span></p>
+      <div class="shot" role="img" aria-label="Placeholder: Screenshot: package install screen">Screenshot: package install screen</div>
+      <p><span class="todo">What to check once the install finishes.</span></p>
+
+      <h2 id="access">Give your team access</h2>
+      <p><span class="todo">Report and dashboard folder sharing steps.</span></p>
+      <div class="shot" role="img" aria-label="Placeholder: Screenshot: folder sharing settings">Screenshot: folder sharing settings</div>
+
+      <h2 id="my-reports">Rep &ldquo;My&rdquo; reports</h2>
+      <p>Every report has a &ldquo;My&rdquo; version filtered to the person viewing it, so reps can check their own numbers without seeing the whole team's. <span class="todo">Where they live and how to share them with reps.</span></p>
+
+      <h2 id="dashboards">Dashboards</h2>
+      <p><span class="todo">Running user setup and anything else needed for dashboards to show the right data.</span></p>
+      <div class="shot" role="img" aria-label="Placeholder: Screenshot: dashboard properties">Screenshot: dashboard properties</div>
+
+      <h3>Keeping dead leads out of Lead Aging</h3>
+      <p><span class="todo">Steps from the Leads pack documentation.</span></p>
+
+      <h2 id="rp-labels">About the (RP) labels</h2>
+      <p>Every field a pack adds has a label ending in (RP), for &ldquo;report pack.&rdquo; Most orgs already have fields with ordinary names like &ldquo;Open Opportunities,&rdquo; and two fields with the same label make reports and filters confusing fast. The (RP) suffix keeps pack fields easy to spot. The API names all start with LNRP_ for the same reason.</p>
+      <h3>Relabeling a field</h3>
+      <p>If you'd rather not see (RP), you can change the label without breaking anything. The reports reference the API name, which doesn't change.</p>
+      <p>Go to <span class="path">Setup &rsaquo; Object Manager</span>, open the object, then <span class="path">Fields &amp; Relationships</span>. Click the field, click Edit, change the Field Label, and save. Check that the new label doesn't match a field you already have.</p>
+
+      <h2 id="help">Getting help</h2>
+      <p>Email <a href="mailto:elijah@logicnerds.net">elijah@logicnerds.net</a> with your org edition and a screenshot of whatever looks wrong.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/logic-nerds-mark.png" alt="" width="44" height="26">Logic Nerds</a>
+    <ul>
+      <li><a href="/reports/">Report Packs</a></li>
+      <li><a href="/setup/">Custom Setups</a></li>
+      <li><a href="/install/">Install Guide</a></li>
+      <li><a href="/policies/">Policies</a></li>
+      <li><a href="mailto:elijah@logicnerds.net">elijah@logicnerds.net</a></li>
+    </ul>
+    <p class="copy">&copy; 2026 Logic Nerds. Salesforce is a trademark of Salesforce, Inc. Logic Nerds is not affiliated with or endorsed by Salesforce.</p>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>
