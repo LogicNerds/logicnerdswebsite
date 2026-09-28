@@ -131,7 +131,7 @@
       <p>Old leads that were never closed out make Lead Aging look worse than it is. Open Lead Aging by Status, click Edit, and add a filter on Lead Status that excludes your dead or recycled statuses. Save. The same filter works on My Open Leads.</p>
 
       <h2 id="pi">Pipeline Intelligence setup</h2>
-      <p>Pipeline Intelligence installs all four report packs plus its own components. Follow the steps above for the packs, then these.</p>
+      <p>Pipeline Intelligence comes as five install links: one for each report pack and one for Pipeline Intelligence itself. Install and set up the four packs first using the steps above, then install Pipeline Intelligence the same way and finish with these steps. Installing Pipeline Intelligence before the packs won't work.</p>
       <!-- Written from the Pipeline Intelligence design; check against the final build. -->
       <h3>Map your lead statuses</h3>
       <p>Pipeline Intelligence tracks your funnel from the Lead Status values you already use. Go to <span class="path">Setup &rsaquo; Custom Metadata Types</span>, click Manage Records next to Lead Status Mapping, and create one record for each of your Lead Status values. Choose the funnel stage it represents and a sort order, lowest first. Map your converted status to SQL, and map statuses like Unqualified to Disqualified.</p>
@@ -143,7 +143,7 @@
       <h3>Map lead fields for conversion</h3>
       <p>So funnel dates carry over when a lead converts, go to <span class="path">Setup &rsaquo; Object Manager &rsaquo; Lead &rsaquo; Fields &amp; Relationships</span>, click Map Lead Fields, and map each Pipeline Intelligence lead date to its matching Contact field.</p>
       <h3>Set up stale-deal emails</h3>
-      <p>Have each rep subscribe to My Stale Opportunities with the condition that it only sends when there's at least one record. Managers can subscribe to the team version.</p>
+      <p>Have each rep subscribe to My Stale Deals, from the Pipeline Health pack, with the condition that it only sends when there's at least one record. Managers can subscribe to Stale Deals.</p>
       <h3>Tracking starts now</h3>
       <p>Stage history and funnel dates are recorded from the day you install. Reports fill in as deals and leads move.</p>
 
