@@ -115,23 +115,13 @@
 
 <section class="band" aria-labelledby="fields-h">
   <div class="wrap split">
-    <h2 id="fields-h">What it adds to your org</h2>
-    <div>
-      <p class="measure">These fields power the reports. Each label ends in (RP) so it never collides with a field you already have.</p>
-      <div class="table-wrap" style="margin-top:1.25rem">
-      <table class="spec">
-        <thead><tr><th>Field</th><th>Object</th><th>What it does</th><th>API name</th></tr></thead>
-        <tbody>
-          <tr><td>Customer Status (RP)</td><td>Account</td><td>Prospect if never won, Active if won in the last 365 days, Lapsed if not.</td><td class="mono">LNRP_Customer_Status__c</td></tr>
-          <tr><td>Customer Since (RP)</td><td>Account</td><td>Close date of the first won deal.</td><td class="mono">LNRP_Customer_Since__c</td></tr>
-          <tr><td>Last Won Date (RP)</td><td>Account</td><td>Close date of the most recent won deal.</td><td class="mono">LNRP_Last_Won_Date__c</td></tr>
-          <tr><td>Lifetime Won Amount (RP)</td><td>Account</td><td>Total amount of all won deals.</td><td class="mono">LNRP_Lifetime_Won_Amount__c</td></tr>
-          <tr><td>Renewal Date (RP)</td><td>Account</td><td>Next anniversary of Customer Since.</td><td class="mono">LNRP_Renewal_Date__c</td></tr>
-          <tr><td>Open Opportunity Count (RP)</td><td>Account</td><td>Number of open deals on the account.</td><td class="mono">LNRP_Open_Opp_Count__c</td></tr>
-        </tbody>
-      </table>
-      </div>
-      <p style="margin-top:1.5rem">This pack adds no rules or automation.</p>
+    <h2 id="fields-h">Behind the scenes</h2>
+    <div class="measure">
+      <ul class="plain">
+        <li>Tracks each customer's status, lifetime value, most recent win and renewal date automatically.</li>
+        <li>Counts open deals on every account, so customers with nothing in the pipeline stand out.</li>
+      </ul>
+      <p style="margin-top:1.25rem" class="muted">Everything the pack adds is labeled so it can't collide with what's already in your org, and any of it can be switched off.</p>
     </div>
   </div>
 </section>
@@ -140,8 +130,7 @@
   <div class="wrap split">
     <h2 id="adjust-h">Easy to adjust</h2>
     <ul class="plain measure">
-        <li>Customer Status counts a customer as Active for 365 days after a win. Change the 365 if your contracts run longer.</li>
-        <li>Renewal Date assumes annual contracts. If yours aren't annual, swap in a date field you keep up yourself.</li>
+        <li>How long a customer counts as active, and how renewals are timed, can be adjusted if your contracts aren't annual.</li>
     </ul>
   </div>
 </section>

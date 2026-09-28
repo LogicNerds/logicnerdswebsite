@@ -115,23 +115,13 @@
 
 <section class="band" aria-labelledby="fields-h">
   <div class="wrap split">
-    <h2 id="fields-h">What it adds to your org</h2>
-    <div>
-      <p class="measure">These fields power the reports. Each label ends in (RP) so it never collides with a field you already have.</p>
-      <div class="table-wrap" style="margin-top:1.25rem">
-      <table class="spec">
-        <thead><tr><th>Field</th><th>Object</th><th>What it does</th><th>API name</th></tr></thead>
-        <tbody>
-          <tr><td>Won (Win Rate) (RP)</td><td>Opportunity</td><td>100% if won, 0% if not. Averaged across closed deals, it's your win rate.</td><td class="mono">LNRP_Won__c</td></tr>
-          <tr><td>Loss Reason (RP)</td><td>Opportunity</td><td>Why the deal was lost.</td><td class="mono">LNRP_Loss_Reason__c</td></tr>
-        </tbody>
-      </table>
-      </div>
-      <h3 style="margin-top:2.25rem">Rules and automation</h3>
-      <p>Everything here is active when the pack installs. Any of it can be switched off in Setup if you don't want it.</p>
+    <h2 id="fields-h">Behind the scenes</h2>
+    <div class="measure">
       <ul class="plain">
-        <li>Validation rule: a Loss Reason is required before a deal can be closed as lost.</li>
+        <li>Calculates win rate automatically, by rep, by source or by deal type.</li>
+        <li>Makes sure every lost deal comes with a reason, so your loss data is worth reading.</li>
       </ul>
+      <p style="margin-top:1.25rem" class="muted">Everything the pack adds is labeled so it can't collide with what's already in your org, and any of it can be switched off.</p>
     </div>
   </div>
 </section>
@@ -140,7 +130,7 @@
   <div class="wrap split">
     <h2 id="adjust-h">Easy to adjust</h2>
     <ul class="plain measure">
-        <li>Edit the Loss Reason picklist values to match the reasons your team actually hears.</li>
+        <li>Loss reasons can be edited to match what your team actually hears.</li>
     </ul>
   </div>
 </section>
