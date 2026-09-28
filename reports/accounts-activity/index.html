@@ -45,11 +45,12 @@
       <div>
         <h1>Accounts &amp; Activity</h1>
         <p class="lead">Which customers are getting attention and which ones have gone quiet.</p>
+        <p class="muted">7 team reports, 2 Rep-Level Personal reports, 1 dashboard and an action guide.</p>
         <div class="buybox">
           <span class="price">$29</span>
           <a class="btn" href="#" data-buy="accounts-activity">Buy Accounts &amp; Activity</a>
         </div>
-        <p class="small muted" style="margin-top:1rem">Or get <a href="/reports/">all four packs for $99</a>. Professional Edition and up.</p>
+        <p class="small muted" style="margin-top:1rem">Or get <a href="/reports/">all four packs for $89</a>. Professional Edition and up.</p>
       </div>
       <div class="shot" role="img" aria-label="Placeholder: Screenshot: Accounts & Activity dashboard">Screenshot: Accounts & Activity dashboard</div>
     </div>
@@ -60,12 +61,11 @@
   <div class="wrap split">
     <h2 id="answers-h">What it answers</h2>
     <div class="measure">
-      <!-- Draft questions: check them against the final report list -->
       <ul class="plain">
-        <li>Which customers have no open opportunity right now?</li>
-        <li>Which accounts haven't had any activity recently?</li>
-        <li>Who on the team is logging activity, and on which accounts?</li>
-        <li>How concentrated is revenue across our accounts?</li>
+        <li>Which customers have nothing in the pipeline right now?</li>
+        <li>Which customers have gone dark?</li>
+        <li>Which renewals are coming up in the next 90 days?</li>
+        <li>Who are our best customers, and what's missing from our account and contact data?</li>
       </ul>
     </div>
   </div>
@@ -75,14 +75,20 @@
   <div class="wrap split">
     <h2 id="reports-h">Reports included</h2>
     <div>
-      <div class="table-wrap">
+      <p class="measure">7 team reports for managers and 2 Rep-Level Personal reports that show each team member only their own records.</p>
+      <div class="table-wrap" style="margin-top:1.25rem">
       <table class="spec">
-        <thead><tr><th>Report</th><th>What it shows</th><th>&ldquo;My&rdquo; version</th></tr></thead>
+        <thead><tr><th>Report</th><th>What it shows</th><th>For</th></tr></thead>
         <tbody>
-          <tr><td>Customers With No Open Opportunity</td><td>Customer accounts with nothing currently in the pipeline.</td><td>Yes</td></tr>
-          <tr><td><span class="todo">Report name</span></td><td><span class="todo">What it shows</span></td><td><span class="todo">Yes/No</span></td></tr>
-          <tr><td><span class="todo">Report name</span></td><td><span class="todo">What it shows</span></td><td><span class="todo">Yes/No</span></td></tr>
-          <tr><td><span class="todo">Report name</span></td><td><span class="todo">What it shows</span></td><td><span class="todo">Yes/No</span></td></tr>
+          <tr><td>Customers With No Open Opportunity</td><td>Active or lapsed customers with nothing open. Your expansion and win-back list, highest lifetime value first.</td><td>Team</td></tr>
+          <tr><td>Dark Accounts</td><td>Customers with no logged activity in 90 or more days, or none ever, largest first.</td><td>Team</td></tr>
+          <tr><td>Upcoming Renewals</td><td>Active customers with a renewal date in the next 90 days, soonest first.</td><td>Team</td></tr>
+          <tr><td>Top Customers by Lifetime Won Amount</td><td>Accounts ranked by total closed-won amount, with status and last activity.</td><td>Team</td></tr>
+          <tr><td>Activity by Rep</td><td>Tasks and events dated this month, by rep.</td><td>Team</td></tr>
+          <tr><td>Accounts Missing Key Info</td><td>Accounts missing Industry, Employees or Billing Country, by owner.</td><td>Team</td></tr>
+          <tr><td>Contacts Missing Email or Title</td><td>Contacts missing an email or title, by owner.</td><td>Team</td></tr>
+          <tr><td>My Accounts</td><td>Each rep's own accounts with status, renewal date and last activity, stalest first.</td><td>Rep-Level Personal</td></tr>
+          <tr><td>My Upcoming Renewals</td><td>Each rep's own renewals in the next 90 days.</td><td>Rep-Level Personal</td></tr>
         </tbody>
       </table>
       </div>
@@ -92,10 +98,10 @@
 
 <section class="band band-surface" aria-labelledby="dash-h">
   <div class="wrap split">
-    <h2 id="dash-h">Dashboards</h2>
-    <div class="two-up">
-      <div class="shot" role="img" aria-label="Placeholder: Screenshot: Accounts & Activity dashboard (team)">Screenshot: Accounts & Activity dashboard (team)</div>
-      <div class="shot" role="img" aria-label="Placeholder: Screenshot: Accounts & Activity dashboard (rep view)">Screenshot: Accounts & Activity dashboard (rep view)</div>
+    <h2 id="dash-h">Dashboard</h2>
+    <div>
+      <p class="measure">Renewals, expansion and win-back targets, dark accounts, rep activity and data gaps.</p>
+      <div style="margin-top:1.25rem"><div class="shot" role="img" aria-label="Placeholder: Screenshot: Accounts & Activity dashboard, full page">Screenshot: Accounts & Activity dashboard, full page</div></div>
     </div>
   </div>
 </section>
@@ -109,20 +115,34 @@
 
 <section class="band" aria-labelledby="fields-h">
   <div class="wrap split">
-    <h2 id="fields-h">Fields it adds</h2>
+    <h2 id="fields-h">What it adds to your org</h2>
     <div>
-      <p>These fields are added to support the reports. Labels end in (RP) and API names start with LNRP_.</p>
-      <!-- TODO: confirm field list and API names -->
-      <div class="table-wrap">
+      <p class="measure">These fields power the reports. Each label ends in (RP) so it never collides with a field you already have.</p>
+      <div class="table-wrap" style="margin-top:1.25rem">
       <table class="spec">
-        <thead><tr><th>Field label</th><th>API name</th><th>Object</th><th>Purpose</th></tr></thead>
+        <thead><tr><th>Field</th><th>Object</th><th>What it does</th><th>API name</th></tr></thead>
         <tbody>
-          <tr><td>Open Opportunity Count (RP)</td><td class="mono">LNRP_Open_Opportunity_Count__c</td><td>Account</td><td>Roll-up of open opportunities. Powers the No Open Opportunity report.</td></tr>
-          <tr><td><span class="todo">Field</span></td><td><span class="todo">API name</span></td><td><span class="todo">Object</span></td><td><span class="todo">Purpose</span></td></tr>
+          <tr><td>Customer Status (RP)</td><td>Account</td><td>Prospect if never won, Active if won in the last 365 days, Lapsed if not.</td><td class="mono">LNRP_Customer_Status__c</td></tr>
+          <tr><td>Customer Since (RP)</td><td>Account</td><td>Close date of the first won deal.</td><td class="mono">LNRP_Customer_Since__c</td></tr>
+          <tr><td>Last Won Date (RP)</td><td>Account</td><td>Close date of the most recent won deal.</td><td class="mono">LNRP_Last_Won_Date__c</td></tr>
+          <tr><td>Lifetime Won Amount (RP)</td><td>Account</td><td>Total amount of all won deals.</td><td class="mono">LNRP_Lifetime_Won_Amount__c</td></tr>
+          <tr><td>Renewal Date (RP)</td><td>Account</td><td>Next anniversary of Customer Since.</td><td class="mono">LNRP_Renewal_Date__c</td></tr>
+          <tr><td>Open Opportunity Count (RP)</td><td>Account</td><td>Number of open deals on the account.</td><td class="mono">LNRP_Open_Opp_Count__c</td></tr>
         </tbody>
       </table>
       </div>
+      <p style="margin-top:1.5rem">This pack adds no rules or automation.</p>
     </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="adjust-h">
+  <div class="wrap split">
+    <h2 id="adjust-h">Easy to adjust</h2>
+    <ul class="plain measure">
+        <li>Customer Status counts a customer as Active for 365 days after a win. Change the 365 if your contracts run longer.</li>
+        <li>Renewal Date assumes annual contracts. If yours aren't annual, swap in a date field you keep up yourself.</li>
+    </ul>
   </div>
 </section>
 
@@ -133,7 +153,7 @@
       <ul class="plain">
         <li>Salesforce Professional Edition or higher</li>
         <li>A user with permission to install packages (usually System Administrator)</li>
-        <li>About <span class="todo">time</span> to install and check the dashboards</li>
+        <li>About <span class="todo">time</span> to install and check the dashboard</li>
       </ul>
       <p style="margin-top:1.25rem">Read the <a href="/install/">install guide</a> before you buy if you want to see exactly what's involved.</p>
       <div class="buybox">
@@ -147,7 +167,7 @@
 <section class="band" aria-labelledby="other-h">
   <div class="wrap split">
     <h2 id="other-h">Other packs</h2>
-    <p><a href="/reports/pipeline-health/">Pipeline Health</a> &middot; <a href="/reports/win-loss-velocity/">Win/Loss &amp; Velocity</a> &middot; <a href="/reports/leads-top-of-funnel/">Leads &amp; Top of Funnel</a>. Or <a href="/reports/">get all four for $99</a>.</p>
+    <p><a href="/reports/pipeline-health/">Pipeline Health</a> &middot; <a href="/reports/win-loss-velocity/">Win/Loss &amp; Velocity</a> &middot; <a href="/reports/leads-top-of-funnel/">Leads &amp; Top of Funnel</a>. Or <a href="/reports/">get all four for $89</a>.</p>
   </div>
 </section>
 </main>

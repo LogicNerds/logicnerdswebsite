@@ -45,11 +45,12 @@
       <div>
         <h1>Leads &amp; Top of Funnel</h1>
         <p class="lead">Where leads come from, how fast they get worked, and which ones are going stale.</p>
+        <p class="muted">4 team reports, 2 Rep-Level Personal reports, 1 dashboard and an action guide.</p>
         <div class="buybox">
           <span class="price">$29</span>
           <a class="btn" href="#" data-buy="leads-top-of-funnel">Buy Leads &amp; Top of Funnel</a>
         </div>
-        <p class="small muted" style="margin-top:1rem">Or get <a href="/reports/">all four packs for $99</a>. Professional Edition and up.</p>
+        <p class="small muted" style="margin-top:1rem">Or get <a href="/reports/">all four packs for $89</a>. Professional Edition and up.</p>
       </div>
       <div class="shot" role="img" aria-label="Placeholder: Screenshot: Leads & Top of Funnel dashboard">Screenshot: Leads & Top of Funnel dashboard</div>
     </div>
@@ -60,12 +61,11 @@
   <div class="wrap split">
     <h2 id="answers-h">What it answers</h2>
     <div class="measure">
-      <!-- Draft questions: check them against the final report list -->
       <ul class="plain">
-        <li>Where are our leads coming from?</li>
-        <li>How long does a new lead wait before someone works it?</li>
-        <li>Which leads are aging without any follow-up?</li>
-        <li>How many leads turn into opportunities, by source?</li>
+        <li>Which lead sources actually convert?</li>
+        <li>How fast do new leads get their first touch?</li>
+        <li>Which leads haven't been touched at all?</li>
+        <li>Where do leads pile up by status?</li>
       </ul>
       <p class="muted" style="margin-top:1.25rem">Dead leads that were never closed out can skew Lead Aging. The install guide covers how to keep them out of the numbers without adding another field.</p>
     </div>
@@ -76,14 +76,17 @@
   <div class="wrap split">
     <h2 id="reports-h">Reports included</h2>
     <div>
-      <div class="table-wrap">
+      <p class="measure">4 team reports for managers and 2 Rep-Level Personal reports that show each team member only their own records.</p>
+      <div class="table-wrap" style="margin-top:1.25rem">
       <table class="spec">
-        <thead><tr><th>Report</th><th>What it shows</th><th>&ldquo;My&rdquo; version</th></tr></thead>
+        <thead><tr><th>Report</th><th>What it shows</th><th>For</th></tr></thead>
         <tbody>
-          <tr><td>Lead Aging</td><td>How long open leads have been sitting, and who owns them.</td><td>Yes</td></tr>
-          <tr><td><span class="todo">Report name</span></td><td><span class="todo">What it shows</span></td><td><span class="todo">Yes/No</span></td></tr>
-          <tr><td><span class="todo">Report name</span></td><td><span class="todo">What it shows</span></td><td><span class="todo">Yes/No</span></td></tr>
-          <tr><td><span class="todo">Report name</span></td><td><span class="todo">What it shows</span></td><td><span class="todo">Yes/No</span></td></tr>
+          <tr><td>Lead Conversion by Source</td><td>Conversion rate by lead source and month created, last 365 days.</td><td>Team</td></tr>
+          <tr><td>Speed to Lead</td><td>Average hours from lead creation to first completed activity, by owner, last 90 days.</td><td>Team</td></tr>
+          <tr><td>Untouched Leads</td><td>Unconverted leads with no logged activity, by owner, oldest first.</td><td>Team</td></tr>
+          <tr><td>Lead Aging by Status</td><td>Unconverted leads by status, with average age in days. Shows where leads pile up.</td><td>Team</td></tr>
+          <tr><td>My Open Leads</td><td>Each rep's own unconverted leads by status, oldest first.</td><td>Rep-Level Personal</td></tr>
+          <tr><td>My Untouched Leads</td><td>Each rep's own leads with no logged activity, oldest first.</td><td>Rep-Level Personal</td></tr>
         </tbody>
       </table>
       </div>
@@ -93,10 +96,10 @@
 
 <section class="band band-surface" aria-labelledby="dash-h">
   <div class="wrap split">
-    <h2 id="dash-h">Dashboards</h2>
-    <div class="two-up">
-      <div class="shot" role="img" aria-label="Placeholder: Screenshot: Leads & Top of Funnel dashboard (team)">Screenshot: Leads & Top of Funnel dashboard (team)</div>
-      <div class="shot" role="img" aria-label="Placeholder: Screenshot: Leads & Top of Funnel dashboard (rep view)">Screenshot: Leads & Top of Funnel dashboard (rep view)</div>
+    <h2 id="dash-h">Dashboard</h2>
+    <div>
+      <p class="measure">Lead conversion, follow-up speed, untouched leads and lead aging.</p>
+      <div style="margin-top:1.25rem"><div class="shot" role="img" aria-label="Placeholder: Screenshot: Leads & Top of Funnel dashboard, full page">Screenshot: Leads & Top of Funnel dashboard, full page</div></div>
     </div>
   </div>
 </section>
@@ -110,9 +113,25 @@
 
 <section class="band" aria-labelledby="fields-h">
   <div class="wrap split">
-    <h2 id="fields-h">Fields it adds</h2>
+    <h2 id="fields-h">What it adds to your org</h2>
     <div>
-      <p><span class="todo">List any supporting fields this pack adds, or say it adds none.</span></p>
+      <p class="measure">These fields power the reports. Each label ends in (RP) so it never collides with a field you already have.</p>
+      <div class="table-wrap" style="margin-top:1.25rem">
+      <table class="spec">
+        <thead><tr><th>Field</th><th>Object</th><th>What it does</th><th>API name</th></tr></thead>
+        <tbody>
+          <tr><td>First Activity Date (RP)</td><td>Lead</td><td>When the first task was logged against the lead. Filled in by the pack's flow.</td><td class="mono">LNRP_First_Activity_Date__c</td></tr>
+          <tr><td>Hours to First Touch (RP)</td><td>Lead</td><td>Hours from lead creation to the first logged task. Blank until the lead is touched.</td><td class="mono">LNRP_Hours_to_First_Touch__c</td></tr>
+          <tr><td>Lead Age (Days) (RP)</td><td>Lead</td><td>Days from creation to today, or to conversion for converted leads.</td><td class="mono">LNRP_Lead_Age_Days__c</td></tr>
+          <tr><td>Converted (Conversion Rate) (RP)</td><td>Lead</td><td>100% if converted, 0% if not. Averaged across leads, it's your conversion rate.</td><td class="mono">LNRP_Converted__c</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h3 style="margin-top:2.25rem">Rules and automation</h3>
+      <p>Everything here is active when the pack installs. Any of it can be switched off in Setup if you don't want it.</p>
+      <ul class="plain">
+        <li>Flow: when a completed task is logged on an unconverted lead, it records the date of that first activity so Speed to Lead can be measured. It only writes to the pack's own First Activity Date field. Professional Edition limits how many flows can be active at once, and this uses one.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -124,7 +143,8 @@
       <ul class="plain">
         <li>Salesforce Professional Edition or higher</li>
         <li>A user with permission to install packages (usually System Administrator)</li>
-        <li>About <span class="todo">time</span> to install and check the dashboards</li>
+        <li>If you&rsquo;re on Professional Edition, one free active flow slot</li>
+        <li>About <span class="todo">time</span> to install and check the dashboard</li>
       </ul>
       <p style="margin-top:1.25rem">Read the <a href="/install/">install guide</a> before you buy if you want to see exactly what's involved.</p>
       <div class="buybox">
@@ -138,7 +158,7 @@
 <section class="band" aria-labelledby="other-h">
   <div class="wrap split">
     <h2 id="other-h">Other packs</h2>
-    <p><a href="/reports/pipeline-health/">Pipeline Health</a> &middot; <a href="/reports/win-loss-velocity/">Win/Loss &amp; Velocity</a> &middot; <a href="/reports/accounts-activity/">Accounts &amp; Activity</a>. Or <a href="/reports/">get all four for $99</a>.</p>
+    <p><a href="/reports/pipeline-health/">Pipeline Health</a> &middot; <a href="/reports/win-loss-velocity/">Win/Loss &amp; Velocity</a> &middot; <a href="/reports/accounts-activity/">Accounts &amp; Activity</a>. Or <a href="/reports/">get all four for $89</a>.</p>
   </div>
 </section>
 </main>
