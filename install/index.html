@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Report Pack Install Guide | Logic Nerds</title>
-<meta name="description" content="How to install a Logic Nerds Salesforce report pack: requirements, package install, folder access, dashboards and relabeling (RP) fields.">
+<title>Install Guide | Logic Nerds</title>
+<meta name="description" content="How to install a Logic Nerds Salesforce report pack or Pipeline Intelligence: flow check, package install, access, dashboards, thresholds and guardrails.">
 <link rel="canonical" href="https://www.logicnerds.net/install/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Logic Nerds">
-<meta property="og:title" content="Report Pack Install Guide | Logic Nerds">
-<meta property="og:description" content="How to install a Logic Nerds Salesforce report pack: requirements, package install, folder access, dashboards and relabeling (RP) fields.">
+<meta property="og:title" content="Install Guide | Logic Nerds">
+<meta property="og:description" content="How to install a Logic Nerds Salesforce report pack or Pipeline Intelligence: flow check, package install, access, dashboards, thresholds and guardrails.">
 <meta property="og:url" content="https://www.logicnerds.net/install/">
 <meta property="og:image" content="https://www.logicnerds.net/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -40,8 +40,8 @@
 <main id="main">
 <section class="page-head">
   <div class="wrap">
-    <h1>Installing a report pack</h1>
-    <p class="lead">Everything you need to get a pack running in your org. Plan on about <span class="todo">time</span>.</p>
+    <h1>Installing a report pack or Pipeline Intelligence</h1>
+    <p class="lead">Everything you need to get a pack running in your org. A single report pack takes about 30 minutes. All four take about an hour. Pipeline Intelligence takes about 2 hours.</p>
   </div>
 </section>
 
@@ -50,11 +50,17 @@
     <nav class="toc" aria-label="On this page">
       <ul>
         <li><a href="#before">Before you start</a></li>
+        <li><a href="#flows">Check your flows</a></li>
         <li><a href="#package">Install the package</a></li>
         <li><a href="#access">Give your team access</a></li>
         <li><a href="#my-reports">Rep-Level Personal reports</a></li>
         <li><a href="#dashboards">Dashboards</a></li>
+        <li><a href="#adjust">Adjust thresholds</a></li>
+        <li><a href="#guardrails">Guardrails</a></li>
+        <li><a href="#leads">Leads pack notes</a></li>
+        <li><a href="#pi">Pipeline Intelligence setup</a></li>
         <li><a href="#rp-labels">About the (RP) labels</a></li>
+        <li><a href="#uninstall">Uninstalling</a></li>
         <li><a href="#help">Getting help</a></li>
       </ul>
     </nav>
@@ -62,36 +68,93 @@
     <div class="doc">
       <h2 id="before">Before you start</h2>
       <ul class="plain">
-        <li>Salesforce Professional Edition or higher</li>
-        <li>Log in as a user who can install packages (usually a System Administrator)</li>
-        <li>The install link from your order email</li>
-        <li><span class="todo">Anything else to check first</span></li>
+        <li>Salesforce Professional Edition or higher.</li>
+        <li>Log in as a user who can install packages. That's usually a System Administrator.</li>
+        <li>Have the install link from your order email ready.</li>
+        <li>If you have a sandbox, install there first and try it before installing in production.</li>
       </ul>
 
+      <h2 id="flows">Check your flows</h2>
+      <p>Professional Edition allows 5 active flows of each type. The Leads &amp; Top of Funnel pack adds 1 record-triggered flow, and Pipeline Intelligence adds 3 in total. The other three packs add none. If your org doesn't have room, the flows will install but can't all be activated.</p>
+      <p>To check, go to <span class="path">Setup</span>, type <span class="path">Flows</span> in Quick Find and open Flows. Look at the Process Type and Active columns and count the active flows whose type is record-triggered. Five minus that number is how many you have left.</p>
+      <p>If you don't have enough room, combining flows to fit is available as a <a href="/setup/">custom project</a>.</p>
+
       <h2 id="package">Install the package</h2>
-      <p><span class="todo">Steps for opening the install link, choosing who to install for, and confirming.</span></p>
+      <h3>Open the install link</h3>
+      <p>Open the link from your order email and log in as your admin user. To install in a sandbox instead, change <span class="path">login.salesforce.com</span> at the start of the link to <span class="path">test.salesforce.com</span>.</p>
+      <h3>Choose who to install for</h3>
+      <p>Choose <strong>Install for Admins Only</strong>. You'll give everyone else access with the pack's permission set in the next section, which is easier to manage than profile-by-profile access.</p>
+      <h3>Install</h3>
+      <p>Click Install. Most packs finish in a minute or two. If Salesforce says the install is taking longer, you'll get an email when it's done.</p>
       <div class="shot" role="img" aria-label="Placeholder: Screenshot: package install screen">Screenshot: package install screen</div>
-      <p><span class="todo">What to check once the install finishes.</span></p>
+      <h3>Confirm it installed</h3>
+      <p>Go to <span class="path">Setup &rsaquo; Installed Packages</span> and check that the pack is listed.</p>
 
       <h2 id="access">Give your team access</h2>
-      <p><span class="todo">Report and dashboard folder sharing steps.</span></p>
+      <h3>Assign the permission set</h3>
+      <p>Each pack includes a permission set that lets users see its fields. Go to <span class="path">Setup &rsaquo; Permission Sets</span>, open the pack's permission set, click Manage Assignments, then Add Assignment. Select everyone who should see the pack's reports, click Next and then Assign.</p>
+      <h3>Share the folders</h3>
+      <p>Each pack installs its reports in one folder and its dashboard in another. In the Reports tab, open All Folders, click the arrow next to the pack's report folder and choose Share. Share it with the groups, roles or users who need it, with View access. Do the same for the dashboard folder in the Dashboards tab.</p>
       <div class="shot" role="img" aria-label="Placeholder: Screenshot: folder sharing settings">Screenshot: folder sharing settings</div>
 
       <h2 id="my-reports">Rep-Level Personal reports</h2>
-      <p>Each pack includes Rep-Level Personal reports. They're filtered to whoever is viewing them, so each team member sees only their own records. In Salesforce their names start with &ldquo;My,&rdquo; such as My Open Pipeline. <span class="todo">Where they live and how to share them with reps.</span></p>
+      <p>Each pack includes Rep-Level Personal reports. Their names start with &ldquo;My,&rdquo; such as My Open Pipeline, and they show only the records owned by whoever is viewing them. They live in the same folder as the team reports, so sharing the folder is all reps need.</p>
+      <h3>Email subscriptions</h3>
+      <p>Reps can have a report emailed to them on a schedule. Open the report, click Subscribe, set how often, and save. You can add a condition so the email only sends when the report has at least one record.</p>
+      <p>Each rep needs to subscribe themselves. When an admin subscribes someone else, the report runs as the admin, so the rep sees the admin's records, not their own. Salesforce allows each user 7 report subscriptions (15 on Unlimited Edition).</p>
 
       <h2 id="dashboards">Dashboards</h2>
-      <p>Each pack installs one dashboard in its own folder. <span class="todo">Running user setup and anything else needed for the dashboard to show the right data.</span></p>
+      <p>A dashboard shows data as one specific user sees it. Open the pack's dashboard, click Edit, then the gear icon for dashboard properties. Under View Dashboard As, choose a user who can see all of your team's records, such as a sales manager. Save, then click Done.</p>
       <div class="shot" role="img" aria-label="Placeholder: Screenshot: dashboard properties">Screenshot: dashboard properties</div>
 
-      <h3>Keeping dead leads out of Lead Aging</h3>
-      <p><span class="todo">Steps from the Leads pack documentation.</span></p>
+      <h2 id="adjust">Adjust thresholds</h2>
+      <p>A few reports and fields use thresholds you can change to fit your sales cycle.</p>
+      <h3>Report filters</h3>
+      <p>Stale Deals uses 14 days without activity and Stuck in Stage uses 30 days. Open the report, click Edit, change the number in the filter, and save. Change the matching Rep-Level Personal report too.</p>
+      <h3>Customer status and renewals</h3>
+      <p>Customer Status (RP) counts a customer as active for 365 days after a win. To change it, go to <span class="path">Setup &rsaquo; Object Manager &rsaquo; Account &rsaquo; Fields &amp; Relationships</span>, open Customer Status (RP), click Edit, change 365 in the formula and save. Renewal Date (RP) assumes annual contracts. If yours aren't annual, report on a date field you keep up yourself instead.</p>
+      <h3>Loss reasons</h3>
+      <p>Edit the values in the Loss Reason (RP) picklist on Opportunity to match the reasons your team actually hears.</p>
+
+      <h2 id="guardrails">Guardrails</h2>
+      <p>Some packs install rules that keep key information filled in, and they're active from the start. To change one, go to <span class="path">Setup &rsaquo; Object Manager</span>, open the object, then Validation Rules. Open the rule and click Edit. To switch it off, uncheck Active and save.</p>
+      <ul class="plain">
+        <li><strong>Pipeline Health:</strong> open deals at 20% probability or higher need an Amount and a Next Step, and open deals can't be given a close date in the past. To move the 20% line, change 0.20 in the rule's formula.</li>
+        <li><strong>Win/Loss &amp; Velocity:</strong> a loss reason is required before a deal can be closed lost.</li>
+        <li><strong>Pipeline Intelligence:</strong> adds a required reason when a lead is disqualified, on top of the rules above.</li>
+      </ul>
+
+      <h2 id="leads">Leads pack notes</h2>
+      <h3>Check the flow is active</h3>
+      <p>Go to <span class="path">Setup &rsaquo; Flows</span> and check that LNRP Leads Pack - First Activity Stamp shows as active. It records when each lead is first worked, and Speed to Lead depends on it. It only measures leads created after install.</p>
+      <h3>Keep dead leads out of Lead Aging</h3>
+      <p>Old leads that were never closed out make Lead Aging look worse than it is. Open Lead Aging by Status, click Edit, and add a filter on Lead Status that excludes your dead or recycled statuses. Save. The same filter works on My Open Leads.</p>
+
+      <h2 id="pi">Pipeline Intelligence setup</h2>
+      <p>Pipeline Intelligence installs all four report packs plus its own components. Follow the steps above for the packs, then these.</p>
+      <!-- Written from the Pipeline Intelligence design; check against the final build. -->
+      <h3>Map your lead statuses</h3>
+      <p>Pipeline Intelligence tracks your funnel from the Lead Status values you already use. Go to <span class="path">Setup &rsaquo; Custom Metadata Types</span>, click Manage Records next to Lead Status Mapping, and create one record for each of your Lead Status values. Choose the funnel stage it represents and a sort order, lowest first. Map your converted status to SQL, and map statuses like Unqualified to Disqualified.</p>
+      <p>If your statuses don't separate stages like MQL and SQL, those stages won't be recorded and the funnel reports will show gaps. Adding status values fixes that.</p>
+      <h3>Check the flows are active</h3>
+      <p>In <span class="path">Setup &rsaquo; Flows</span>, check that both Pipeline Intelligence flows and the Leads pack flow show as active.</p>
+      <h3>Add the new fields to your page layouts</h3>
+      <p>Add the Stage History related list and the new Opportunity fields to your Opportunity page layout, or to your Lightning record page in Lightning App Builder. Do the same for the new Lead fields.</p>
+      <h3>Map lead fields for conversion</h3>
+      <p>So funnel dates carry over when a lead converts, go to <span class="path">Setup &rsaquo; Object Manager &rsaquo; Lead &rsaquo; Fields &amp; Relationships</span>, click Map Lead Fields, and map each Pipeline Intelligence lead date to its matching Contact field.</p>
+      <h3>Set up stale-deal emails</h3>
+      <p>Have each rep subscribe to My Stale Opportunities with the condition that it only sends when there's at least one record. Managers can subscribe to the team version.</p>
+      <h3>Tracking starts now</h3>
+      <p>Stage history and funnel dates are recorded from the day you install. Reports fill in as deals and leads move.</p>
 
       <h2 id="rp-labels">About the (RP) labels</h2>
-      <p>Every field a pack adds has a label ending in (RP), for &ldquo;report pack.&rdquo; Most orgs already have fields with ordinary names like &ldquo;Open Opportunities,&rdquo; and two fields with the same label make reports and filters confusing fast. The (RP) suffix keeps pack fields easy to spot. The API names all start with LNRP_ for the same reason.</p>
+      <p>Every field a pack adds has a label ending in (RP), for &ldquo;report pack.&rdquo; Most orgs already have fields with ordinary names like &ldquo;Customer Status,&rdquo; and two fields with the same label make reports and filters confusing fast. The (RP) suffix keeps pack fields easy to spot. The API names all start with LNRP_ for the same reason.</p>
       <h3>Relabeling a field</h3>
       <p>If you'd rather not see (RP), you can change the label without breaking anything. The reports reference the API name, which doesn't change.</p>
       <p>Go to <span class="path">Setup &rsaquo; Object Manager</span>, open the object, then <span class="path">Fields &amp; Relationships</span>. Click the field, click Edit, change the Field Label, and save. Check that the new label doesn't match a field you already have.</p>
+
+      <h2 id="uninstall">Uninstalling</h2>
+      <p>Go to <span class="path">Setup &rsaquo; Installed Packages</span> and click Uninstall next to the pack. Uninstalling removes the pack's reports, dashboards, fields, rules and flows, and deletes any data stored in the pack's fields. Your own records and fields aren't touched.</p>
 
       <h2 id="help">Getting help</h2>
       <p>Email <a href="mailto:elijah@logicnerds.net">elijah@logicnerds.net</a> with your org edition and a screenshot of whatever looks wrong.</p>
