@@ -9,7 +9,8 @@ var BUY_LINKS = {
   "win-loss-velocity": "",
   "leads-top-of-funnel": "",
   "accounts-activity": "",
-  "all-four": ""
+  "all-four": "",
+  "pipeline-intelligence": ""
 };
 
 (function () {
