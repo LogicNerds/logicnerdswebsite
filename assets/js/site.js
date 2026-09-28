@@ -1,16 +1,17 @@
 /* Logic Nerds: site script */
 
 /* Checkout links.
-   Paste each payment link (Stripe Payment Link, Lemon Squeezy, Gumroad, etc.)
-   between the quotes. Every button on the site with a matching data-buy value
+   Stripe Payment Links, one per product. To change a price, create a new
+   payment link in Stripe and paste its URL here. Every button on the site with a matching data-buy value
    picks it up. Buttons with an empty link stay visible but inactive. */
 var BUY_LINKS = {
-  "pipeline-health": "",
-  "win-loss-velocity": "",
-  "leads-top-of-funnel": "",
-  "accounts-activity": "",
-  "all-four": "",
-  "pipeline-intelligence": ""
+  "pipeline-health": "https://buy.stripe.com/6oUbIU3cMdzI5z98TT28800",
+  "win-loss-velocity": "https://buy.stripe.com/00w5kw8x60MW7Hhfih28801",
+  "leads-top-of-funnel": "https://buy.stripe.com/6oU5kw00A67g9Pp6LL28802",
+  "accounts-activity": "https://buy.stripe.com/eVq14g14E8fo0eP6LL28803",
+  "all-four": "https://buy.stripe.com/8x228kaFe1R01iT9XX28804",
+  "pipeline-intelligence": "https://buy.stripe.com/6oUeV68x667g9Ppb2128805",
+  "pipeline-intelligence-install": "https://buy.stripe.com/28EdR28x60MW6Ddda928806"
 };
 
 (function () {
