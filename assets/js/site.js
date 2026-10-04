@@ -12,6 +12,32 @@ var BUY_LINKS = {
   "all-four": "https://buy.stripe.com/8x228kaFe1R01iT9XX28804"
 };
 
+/* Analytics events (Google Analytics 4).
+   buy_click: a buy button, with the product key
+   book_call_click: any link to the booking calendar
+   email_click: any mailto link
+   purchase_page: the post-checkout /thanks/ page (Stripe sends buyers here after paying) */
+(function () {
+  function track(name, params) {
+    if (typeof window.gtag === "function") window.gtag("event", name, params || {});
+  }
+  if (location.pathname.indexOf("/thanks") === 0) {
+    track("purchase_page", { has_session: /[?&]session_id=/.test(location.search) });
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest("a") : null;
+    if (!a) return;
+    var href = a.getAttribute("href") || "";
+    if (a.hasAttribute("data-buy")) {
+      track("buy_click", { product: a.getAttribute("data-buy"), page: location.pathname });
+    } else if (href.indexOf("calendar.app.google") !== -1) {
+      track("book_call_click", { page: location.pathname });
+    } else if (href.indexOf("mailto:") === 0) {
+      track("email_click", { page: location.pathname });
+    }
+  });
+})();
+
 (function () {
   // Buy buttons
   var buttons = document.querySelectorAll("[data-buy]");
