@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pipeline Health Action Guide | Logic Nerds</title>
+<meta name="description" content="How to use the Pipeline Health pack's reports and dashboard to keep your Salesforce pipeline accurate.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://www.logicnerds.net/guides/pipeline-health/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Logic Nerds">
+<meta property="og:title" content="Pipeline Health Action Guide | Logic Nerds">
+<meta property="og:description" content="How to use the Pipeline Health pack's reports and dashboard to keep your Salesforce pipeline accurate.">
+<meta property="og:url" content="https://www.logicnerds.net/guides/pipeline-health/">
+<meta property="og:image" content="https://www.logicnerds.net/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<!-- Analytics: add the tracking snippet here before promoting the site. -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/logic-nerds-mark.png" alt="" width="44" height="26">Logic Nerds</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/setup/">Custom Builds</a></li>
+        <li><a href="/reports/">Report Packs</a></li>
+        <li><a class="btn" href="https://calendar.app.google/puWBrE7kxSBasrjN8" target="_blank" rel="noopener">Book a call</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <p class="small muted"><a href="/reports/pipeline-health/">Pipeline Health pack</a> &middot; Action guide</p>
+    <h1>Pipeline Health: what to do with what you see</h1>
+    <p class="lead">How to turn each report in the pack into a decision. Each section covers what the report tells you, what to do about it, and what to watch for.</p>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0;border-top:0">
+  <div class="wrap">
+    <nav class="toc" aria-label="On this page">
+      <ul>
+        <li><a href="#rhythm">Weekly rhythm</a></li>
+        <li><a href="#by-stage">Pipeline by Stage and Close Month</a></li>
+        <li><a href="#new">New Pipeline Created This Quarter</a></li>
+        <li><a href="#stale">Stale Deals</a></li>
+        <li><a href="#stuck">Stuck in Stage</a></li>
+        <li><a href="#slipped">Slipped Deals</a></li>
+        <li><a href="#past">Deals Past Close Date</a></li>
+        <li><a href="#missing">Missing Amount or Next Step</a></li>
+        <li><a href="#reps">Rep-Level Personal reports</a></li>
+        <li><a href="#help">Questions</a></li>
+      </ul>
+    </nav>
+
+    <div class="doc">
+      <h2 id="rhythm">Weekly rhythm</h2>
+      <p>Pipeline Health works best as a short weekly habit, not a monthly cleanup.</p>
+      <ul class="plain">
+        <li><strong>Reps, Monday morning:</strong> work through My Stale Deals and My Deals Past Close Date before anything else. Each deal on those lists gets updated or closed.</li>
+        <li><strong>Manager, weekly pipeline review (about 30 minutes):</strong> open the Pipeline Health dashboard. Start with the four numbers across the top, then go through the lists below in the order they appear here.</li>
+        <li><strong>Monthly:</strong> write down the four numbers at the top of the dashboard. They should trend down over time. If one keeps climbing, that's the habit to fix first.</li>
+      </ul>
+      <h2 id="by-stage">Pipeline by Stage and Close Month</h2>
+      <p>Where your open pipeline sits and when your team expects it to close. It's the closest thing to a forecast the pack gives you, so it's only as good as the stages and close dates behind it.</p>
+      <h3>What to do</h3>
+      <ul class="plain">
+        <li>Look for early-stage deals with close dates this month. A deal still in Prospecting rarely closes in two weeks. Ask the owner to move the date or the stage.</li>
+        <li>Check next quarter's column. If it's thin now, it will still be thin when the quarter starts. That's a prospecting problem to solve this month, not next quarter.</li>
+        <li>If one deal makes up most of a month's total, plan as if it might slip. Don't let a single deal carry the forecast.</li>
+      </ul>
+      <h3>Watch for</h3>
+      <p>A pile of pipeline in one late stage that never seems to close. That usually means deals are parked at that stage instead of being closed lost.</p>
+      <h2 id="new">New Pipeline Created This Quarter</h2>
+      <p>How much new pipeline each rep has added since the quarter started, and where it came from. Closed deals come out of the pipeline every month, so this is the report that tells you whether it's being refilled.</p>
+      <h3>What to do</h3>
+      <ul class="plain">
+        <li>Compare it to the same point last quarter. Edit the report's date filter to Last Fiscal Quarter to see the full prior quarter.</li>
+        <li>A rep with little or no new pipeline needs prospecting time protected on their calendar, not just a reminder.</li>
+        <li>Look at the lead source split. If most new pipeline comes from one source, a slow month there hits the whole team.</li>
+      </ul>
+      <h3>Watch for</h3>
+      <p>Very early in a quarter this report is nearly empty. That's expected. Read it from about the third week on.</p>
+      <h2 id="stale">Stale Deals</h2>
+      <p>Open deals with no logged activity for 14 days or more. A deal nobody has touched in two weeks is either stalled or already lost and not marked that way.</p>
+      <h3>What to do</h3>
+      <ul class="plain">
+        <li>Every stale deal leaves the weekly review with one of three outcomes: a next activity scheduled this week, an updated stage and close date, or closed lost.</li>
+        <li>A deal that shows up on this list two weeks in a row should be closed lost unless the rep can name the next step and who it's with.</li>
+        <li>If 14 days is too short for how your team sells, change the threshold. The install guide shows how.</li>
+      </ul>
+      <h3>Watch for</h3>
+      <p>Activity means logged calls, emails, tasks and meetings. If your team doesn't log activity in Salesforce, nearly every deal will look stale. Fix the logging habit first, or the list won't mean anything.</p>
+      <h2 id="stuck">Stuck in Stage (30+ Days)</h2>
+      <p>Open deals that have sat in the same stage for 30 days or more. Stale deals are about effort. Stuck deals are about progress: a deal can get plenty of calls and still not move.</p>
+      <h3>What to do</h3>
+      <ul class="plain">
+        <li>For each stuck deal, ask three questions: what has to happen to move it, who on the buyer's side has to do it, and by when.</li>
+        <li>Look at which stage collects the most stuck deals. One stage holding most of them is a process problem, not a rep problem. Stuck at proposal often means pricing approvals or no clear decision maker. Stuck early often means the deal wasn't qualified.</li>
+        <li>If 30 days doesn't fit your sales cycle, adjust the threshold in the report filter.</li>
+      </ul>
+      <h2 id="slipped">Slipped Deals</h2>
+      <p>Open deals whose close date has been pushed to a later month at least once. Salesforce counts every push, so the report shows how many times each deal has moved.</p>
+      <h3>What to do</h3>
+      <ul class="plain">
+        <li>One push happens. Two or more is a pattern. Treat a deal that has been pushed twice as at risk, and don't count on it in the forecast.</li>
+        <li>For deals pushed more than once, ask what changed on the buyer's side. If the answer is "nothing, it just didn't happen," the close date was a guess.</li>
+        <li>Look at slips by rep. A rep whose deals slip far more than the team's usually needs help confirming the buyer's timeline, not more pressure.</li>
+      </ul>
+      <h2 id="past">Deals Past Close Date</h2>
+      <p>Open deals whose close date has already passed. Every deal on this list is wrong in your forecast right now.</p>
+      <h3>What to do</h3>
+      <ul class="plain">
+        <li>Clear this list every week. Each deal gets a new close date with a reason, or gets closed won or closed lost.</li>
+        <li>The pack's guardrail stops anyone from saving an open deal with a close date in the past, so this list only grows as dates pass without an update. A long list means deals aren't being reviewed, not that people are entering bad dates.</li>
+      </ul>
+      <h2 id="missing">Missing Amount or Next Step</h2>
+      <p>Open deals with no Amount or no Next Step. Without an amount a deal can't be forecast, and without a next step nobody knows what happens next.</p>
+      <h3>What to do</h3>
+      <ul class="plain">
+        <li>Have owners fill these in during the weekly review.</li>
+        <li>Hold Next Step to a real standard: a specific action, who it's with, and a date. "Send pricing to the CFO by Oct 14" is a next step. "Follow up" isn't.</li>
+        <li>The pack's guardrail requires both fields once a deal reaches 20% probability, the next time it's edited. Deals on this list are usually early-stage deals or older deals nobody has opened since install.</li>
+      </ul>
+      <h2 id="reps">Rep-Level Personal reports</h2>
+      <p>My Open Pipeline, My Stale Deals, My Slipped Deals and My Deals Past Close Date show each rep only their own deals. They're the same lists the manager reviews, so reps can fix things before the weekly meeting instead of during it.</p>
+      <h3>What to do</h3>
+      <ul class="plain">
+        <li>Have each rep subscribe to My Stale Deals and My Deals Past Close Date for Monday morning, set to send only when the report has at least one record. The <a href="/install/#my-reports">install guide</a> shows how.</li>
+        <li>Use My Open Pipeline in one-on-ones instead of the team report, so the conversation stays on that rep's deals.</li>
+      </ul>
+
+      <h2 id="help">Questions</h2>
+      <p>Email <a href="mailto:elijah@logicnerds.net">elijah@logicnerds.net</a> with questions about the pack for 30 days after purchase. Setup steps, thresholds and guardrails are in the <a href="/install/">install guide</a>. If you need reporting or automation built around your own process, that's a <a href="/setup/">custom build</a>.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/logic-nerds-mark.png" alt="" width="44" height="26">Logic Nerds</a>
+    <ul>
+      <li><a href="/setup/">Custom Builds</a></li>
+      <li><a href="/reports/">Report Packs</a></li>
+      <li><a href="/install/">Install Guide</a></li>
+      <li><a href="/policies/">Policies</a></li>
+      <li><a href="mailto:elijah@logicnerds.net">elijah@logicnerds.net</a></li>
+    </ul>
+    <p class="copy">&copy; 2026 Logic Nerds. Salesforce is a trademark of Salesforce, Inc. Logic Nerds is not affiliated with or endorsed by Salesforce.</p>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>
