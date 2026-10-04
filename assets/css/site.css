@@ -142,7 +142,7 @@ main { display: block; }
 }
 
 /* Homepage hero: the four pack dashboards, cascaded */
-.hero-stack { position: relative; display: block; width: 100%; padding-bottom: 80%; }
+.hero-stack { position: relative; display: block; width: 100%; padding-bottom: 100%; align-self: start; }
 .hero-stack img {
   position: absolute; width: 76%; height: auto;
   border: 1px solid var(--border-strong); border-radius: 4px; background: #f3f3f3;
@@ -150,9 +150,9 @@ main { display: block; }
   transition: transform 0.2s ease;
 }
 .hero-stack .stack-1 { left: 0;   top: 0; }
-.hero-stack .stack-2 { left: 8%;  top: 14%; }
-.hero-stack .stack-3 { left: 16%; top: 28%; }
-.hero-stack .stack-4 { left: 24%; top: 42%; }
+.hero-stack .stack-2 { left: 8%;  top: 20%; }
+.hero-stack .stack-3 { left: 16%; top: 40%; }
+.hero-stack .stack-4 { left: 24%; top: 60%; }
 .hero-stack:hover .stack-1, .hero-stack:focus-visible .stack-1 { transform: translate(-6px, -8px); }
 .hero-stack:hover .stack-2, .hero-stack:focus-visible .stack-2 { transform: translate(-2px, -6px); }
 .hero-stack:hover .stack-3, .hero-stack:focus-visible .stack-3 { transform: translate(2px, -4px); }
