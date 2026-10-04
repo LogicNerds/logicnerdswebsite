@@ -153,7 +153,10 @@ main { display: block; }
 .hero-stack .stack-2 { left: 8%;  top: 14%; }
 .hero-stack .stack-3 { left: 16%; top: 28%; }
 .hero-stack .stack-4 { left: 24%; top: 42%; }
-.hero-stack:hover .stack-4, .hero-stack:focus-visible .stack-4 { transform: translateY(-4px); }
+.hero-stack:hover .stack-1, .hero-stack:focus-visible .stack-1 { transform: translate(-6px, -8px); }
+.hero-stack:hover .stack-2, .hero-stack:focus-visible .stack-2 { transform: translate(-2px, -6px); }
+.hero-stack:hover .stack-3, .hero-stack:focus-visible .stack-3 { transform: translate(2px, -4px); }
+.hero-stack:hover .stack-4, .hero-stack:focus-visible .stack-4 { transform: translate(6px, -2px); }
 @media (prefers-reduced-motion: reduce) { .hero-stack img { transition: none; } }
 
 .page-head { padding: 3.75rem 0 2.5rem; }
