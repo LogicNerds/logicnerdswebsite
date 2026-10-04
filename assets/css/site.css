@@ -294,8 +294,6 @@ table.spec td:first-child { color: var(--ink); font-weight: 500; }
 
 /* ---------- About ---------- */
 
-.about { display: grid; grid-template-columns: 14rem minmax(0, 1fr); gap: 2.5rem; align-items: start; }
-@media (max-width: 640px) { .about { grid-template-columns: minmax(0, 1fr); } .about .shot { max-width: 14rem; } }
 
 .inline-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 1.25rem; font-size: 0.97rem; }
 
