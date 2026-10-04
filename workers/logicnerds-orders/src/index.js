@@ -57,7 +57,8 @@ export default {
     if (!HANDLED_EVENTS.has(event.type)) return new Response("Ignored", { status: 200 });
 
     const session = event.data && event.data.object;
-    if (!session || session.payment_status !== "paid") {
+    // "no_payment_required" covers 100%-off promo codes.
+    if (!session || (session.payment_status !== "paid" && session.payment_status !== "no_payment_required")) {
       return new Response("Not paid yet", { status: 200 });
     }
 
