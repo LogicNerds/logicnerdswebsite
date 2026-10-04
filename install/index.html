@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install Guide | Logic Nerds</title>
+<meta name="description" content="How to install a Logic Nerds Salesforce report pack: flow check, package install, access, dashboards, thresholds and guardrails.">
+<link rel="canonical" href="https://www.logicnerds.net/install/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Logic Nerds">
+<meta property="og:title" content="Install Guide | Logic Nerds">
+<meta property="og:description" content="How to install a Logic Nerds Salesforce report pack: flow check, package install, access, dashboards, thresholds and guardrails.">
+<meta property="og:url" content="https://www.logicnerds.net/install/">
+<meta property="og:image" content="https://www.logicnerds.net/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEY0P46N78"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LEY0P46N78');
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/logic-nerds-mark.png" alt="" width="44" height="26">Logic Nerds</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/setup/">Custom Builds</a></li>
+        <li><a href="/reports/">Report Packs</a></li>
+        <li><a class="btn" href="https://calendar.app.google/puWBrE7kxSBasrjN8" target="_blank" rel="noopener">Book a call</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <h1>Installing a report pack</h1>
+    <p class="lead">Everything you need to get a pack running in your org. A single report pack takes about 30 minutes. All four take about an hour.</p>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0;border-top:0">
+  <div class="wrap">
+    <nav class="toc" aria-label="On this page">
+      <ul>
+        <li><a href="#before">Before you start</a></li>
+        <li><a href="#flows">Check your flows</a></li>
+        <li><a href="#package">Install the package</a></li>
+        <li><a href="#access">Give your team access</a></li>
+        <li><a href="#my-reports">Rep-Level Personal reports</a></li>
+        <li><a href="#dashboards">Dashboards</a></li>
+        <li><a href="#adjust">Adjust thresholds</a></li>
+        <li><a href="#guardrails">Guardrails</a></li>
+        <li><a href="#leads">Leads pack notes</a></li>
+        <li><a href="#rp-labels">About the (RP) labels</a></li>
+        <li><a href="#uninstall">Uninstalling</a></li>
+        <li><a href="#help">Getting help</a></li>
+      </ul>
+    </nav>
+
+    <div class="doc">
+      <h2 id="before">Before you start</h2>
+      <ul class="plain">
+        <li>Salesforce Professional Edition or higher.</li>
+        <li>Log in as a user who can install packages. That's usually a System Administrator.</li>
+        <li>Have the install link from your order email ready.</li>
+        <li>If you have a sandbox, install there first and try it before installing in production.</li>
+      </ul>
+
+      <h2 id="flows">Check your flows</h2>
+      <p>Professional Edition allows 5 active flows of each type. The Leads &amp; Top of Funnel pack adds 1 record-triggered flow. The other three packs add none. If your org doesn't have room, the flow will install but can't be activated.</p>
+      <p>To check, go to <span class="path">Setup</span>, type <span class="path">Flows</span> in Quick Find and open Flows. Look at the Process Type and Active columns and count the active flows whose type is record-triggered. Five minus that number is how many you have left.</p>
+      <p>If you don't have enough room, combining flows to fit is available as a <a href="/setup/">custom project</a>.</p>
+
+      <h2 id="package">Install the package</h2>
+      <h3>Open the install link</h3>
+      <p>Open the link from your order email and log in as your admin user. To install in a sandbox instead, change <span class="path">login.salesforce.com</span> at the start of the link to <span class="path">test.salesforce.com</span>.</p>
+      <h3>Choose who to install for</h3>
+      <p>Choose <strong>Install for Admins Only</strong>. You'll give everyone else access with the pack's permission set in the next section, which is easier to manage than profile-by-profile access.</p>
+      <h3>Install</h3>
+      <p>Click Install. Most packs finish in a minute or two. If Salesforce says the install is taking longer, you'll get an email when it's done.</p>
+      <h3>Confirm it installed</h3>
+      <p>Go to <span class="path">Setup &rsaquo; Installed Packages</span> and check that the pack is listed.</p>
+
+      <h2 id="access">Give your team access</h2>
+      <h3>Assign the permission set</h3>
+      <p>Each pack includes a permission set that lets users see its fields. Go to <span class="path">Setup &rsaquo; Permission Sets</span>, open the pack's permission set, click Manage Assignments, then Add Assignment. Select everyone who should see the pack's reports, click Next and then Assign.</p>
+      <h3>Share the folders</h3>
+      <p>Each pack installs its reports in one folder and its dashboard in another. In the Reports tab, open All Folders, click the arrow next to the pack's report folder and choose Share. Share it with the groups, roles or users who need it, with View access. Do the same for the dashboard folder in the Dashboards tab.</p>
+
+      <h2 id="my-reports">Rep-Level Personal reports</h2>
+      <p>Each pack includes Rep-Level Personal reports. Their names start with &ldquo;My,&rdquo; such as My Open Pipeline, and they show only the records owned by whoever is viewing them. They live in the same folder as the team reports, so sharing the folder is all reps need.</p>
+      <h3>Email subscriptions</h3>
+      <p>Reps can have a report emailed to them on a schedule. Open the report, click Subscribe, set how often, and save. You can add a condition so the email only sends when the report has at least one record.</p>
+      <p>Each rep needs to subscribe themselves. When an admin subscribes someone else, the report runs as the admin, so the rep sees the admin's records, not their own. Salesforce allows each user 7 report subscriptions (15 on Unlimited Edition).</p>
+
+      <h2 id="dashboards">Dashboards</h2>
+      <p>A dashboard shows data as one specific user sees it. Open the pack's dashboard, click Edit, then the gear icon for dashboard properties. Under View Dashboard As, choose a user who can see all of your team's records, such as a sales manager. Save, then click Done.</p>
+
+      <h2 id="adjust">Adjust thresholds</h2>
+      <p>A few reports and fields use thresholds you can change to fit your sales cycle.</p>
+      <h3>Report filters</h3>
+      <p>Stale Deals uses 14 days without activity and Stuck in Stage uses 30 days. Open the report, click Edit, change the number in the filter, and save. Change the matching Rep-Level Personal report too.</p>
+      <h3>Customer status and renewals</h3>
+      <p>Customer Status (RP) counts a customer as active for 365 days after a win. To change it, go to <span class="path">Setup &rsaquo; Object Manager &rsaquo; Account &rsaquo; Fields &amp; Relationships</span>, open Customer Status (RP), click Edit, change 365 in the formula and save. Renewal Date (RP) assumes annual contracts. If yours aren't annual, report on a date field you keep up yourself instead.</p>
+      <h3>Loss reasons</h3>
+      <p>Edit the values in the Loss Reason (RP) picklist on Opportunity to match the reasons your team actually hears.</p>
+
+      <h2 id="guardrails">Guardrails</h2>
+      <p>Some packs install rules that keep key information filled in, and they're active from the start. To change one, go to <span class="path">Setup &rsaquo; Object Manager</span>, open the object, then Validation Rules. Open the rule and click Edit. To switch it off, uncheck Active and save.</p>
+      <ul class="plain">
+        <li><strong>Pipeline Health:</strong> open deals at 20% probability or higher need an Amount and a Next Step, and open deals can't be given a close date in the past. To move the 20% line, change 0.20 in the rule's formula.</li>
+        <li><strong>Win/Loss &amp; Velocity:</strong> a loss reason is required before a deal can be closed lost.</li>
+      </ul>
+      <h3>Add Loss Reason to your opportunity page</h3>
+      <p>Packages can't change your existing page layouts, so the Win/Loss &amp; Velocity pack installs Loss Reason (RP) without putting it on any page. Add it before your team closes another deal as lost, or they'll get an error asking for a field they can't see.</p>
+      <p>Go to <span class="path">Setup &rsaquo; Object Manager &rsaquo; Opportunity &rsaquo; Page Layouts</span>, open each layout your team uses, drag Loss Reason (RP) onto it and save. If you use Path on opportunities, also add Loss Reason (RP) as a key field on the Closed Lost step, so it's asked for at the moment a deal is lost.</p>
+
+      <h2 id="leads">Leads pack notes</h2>
+      <h3>Check the flow is active</h3>
+      <p>Go to <span class="path">Setup &rsaquo; Flows</span> and check that LNRP Leads Pack - First Activity Stamp shows as active. It records when each lead is first worked, and Speed to Lead depends on it. It only measures leads created after install.</p>
+      <h3>Keep dead leads out of Lead Aging</h3>
+      <p>Old leads that were never closed out make Lead Aging look worse than it is. Open Lead Aging by Status, click Edit, and add a filter on Lead Status that excludes your dead or recycled statuses. Save. The same filter works on My Open Leads.</p>
+
+      <h2 id="rp-labels">About the (RP) labels</h2>
+      <p>Every field a pack adds has a label ending in (RP), for &ldquo;report pack.&rdquo; Most orgs already have fields with ordinary names like &ldquo;Customer Status,&rdquo; and two fields with the same label make reports and filters confusing fast. The (RP) suffix keeps pack fields easy to spot. The API names all start with LNRP_ for the same reason.</p>
+      <h3>Relabeling a field</h3>
+      <p>If you'd rather not see (RP), you can change the label without breaking anything. The reports reference the API name, which doesn't change.</p>
+      <p>Go to <span class="path">Setup &rsaquo; Object Manager</span>, open the object, then <span class="path">Fields &amp; Relationships</span>. Click the field, click Edit, change the Field Label, and save. Check that the new label doesn't match a field you already have.</p>
+
+      <h2 id="uninstall">Uninstalling</h2>
+      <p>Go to <span class="path">Setup &rsaquo; Installed Packages</span> and click Uninstall next to the pack. Uninstalling removes the pack's reports, dashboards, fields, rules and flows, and deletes any data stored in the pack's fields. Your own records and fields aren't touched.</p>
+
+      <h2 id="help">Getting help</h2>
+      <p>Email <a href="mailto:elijah@logicnerds.net">elijah@logicnerds.net</a> with your org edition and a screenshot of whatever looks wrong.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/logic-nerds-mark.png" alt="" width="44" height="26">Logic Nerds</a>
+    <ul>
+      <li><a href="/setup/">Custom Builds</a></li>
+      <li><a href="/reports/">Report Packs</a></li>
+      <li><a href="/install/">Install Guide</a></li>
+      <li><a href="/policies/">Policies</a></li>
+      <li><a href="mailto:elijah@logicnerds.net">elijah@logicnerds.net</a></li>
+    </ul>
+    <p class="copy">&copy; 2026 Logic Nerds. Salesforce is a trademark of Salesforce, Inc. Logic Nerds is not affiliated with or endorsed by Salesforce.</p>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

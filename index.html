@@ -2,561 +2,236 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Logic Nerds | Revenue Operations & Sales Alignment Consulting</title>
-<meta name="description" content="Logic Nerds is a revenue operations and sales alignment consultancy with over a decade of experience inside CPG and SaaS organizations. We go beyond the tech stack to fix the people side of revenue performance.">
-<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logic Nerds | Project-Based Salesforce Builds for Small Businesses</title>
+<meta name="description" content="Fixed-scope, fixed-price Salesforce projects for small businesses, with no retainer or full-time admin. Plus self-install report and dashboard packs.">
 <link rel="canonical" href="https://www.logicnerds.net/">
-<meta property="og:title" content="Logic Nerds | Revenue Operations & Sales Alignment Consulting">
-<meta property="og:description" content="Most revenue problems aren't where you think they are. Logic Nerds works with sales leaders who know something is off but can't put their finger on it.">
-<meta property="og:url" content="https://www.logicnerds.net/">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://www.logicnerds.net/og-image.png">
+<meta property="og:site_name" content="Logic Nerds">
+<meta property="og:title" content="Logic Nerds | Project-Based Salesforce Builds for Small Businesses">
+<meta property="og:description" content="Fixed-scope, fixed-price Salesforce projects for small businesses, with no retainer or full-time admin. Plus self-install report and dashboard packs.">
+<meta property="og:url" content="https://www.logicnerds.net/">
+<meta property="og:image" content="https://www.logicnerds.net/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Logic Nerds | Revenue Operations & Sales Alignment Consulting">
-<meta name="twitter:description" content="Most revenue problems aren't where you think they are. Logic Nerds works with sales leaders who know something is off but can't put their finger on it.">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg: #ffffff;
-    --surface: #f7f8fa;
-    --border: #e2e5ea;
-    --border-strong: #c8cdd6;
-    --text: #505050;
-    --text-light: #7a7a7a;
-    --text-muted: #a0a0a0;
-    --blue: #3b89d8;
-    --blue-hover: #2f74c0;
-  }
-
-  html, body {
-    min-height: 100%;
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* NAV */
-  nav {
-    position: sticky;
-    top: 0;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--border);
-    z-index: 100;
-    padding: 0 2rem;
-  }
-
-  .nav-inner {
-    max-width: 1080px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-  }
-
-  .nav-logo {
-    height: 36px;
-    width: auto;
-    display: block;
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 14px;
-    color: var(--text-light);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-
-  .nav-links a:hover { color: var(--text); }
-
-  .nav-cta {
-    background: var(--blue);
-    color: #fff !important;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: 14px !important;
-    padding: 8px 20px;
-    border-radius: 4px;
-    transition: background 0.15s !important;
-  }
-
-  .nav-cta:hover { background: var(--blue-hover); color: #fff !important; }
-
-  /* SECTIONS */
-  section {
-    padding: 6rem 2rem;
-  }
-
-  .section-inner {
-    max-width: 1080px;
-    margin: 0 auto;
-  }
-
-  .section-inner.narrow {
-    max-width: 680px;
-  }
-
-  /* HERO */
-  .hero {
-    padding: 8rem 2rem 6rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .hero-inner {
-    max-width: 720px;
-    margin: 0 auto;
-  }
-
-  .hero-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--blue);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    margin-bottom: 1.25rem;
-  }
-
-  .hero h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(32px, 6vw, 52px);
-    font-weight: 600;
-    line-height: 1.1;
-    color: var(--text);
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-sub {
-    font-size: 18px;
-    color: var(--text-light);
-    line-height: 1.75;
-    margin-bottom: 2.5rem;
-    max-width: 560px;
-  }
-
-  .btn-primary {
-    display: inline-block;
-    background: var(--blue);
-    color: #fff;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    padding: 14px 32px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    transition: background 0.15s;
-  }
-
-  .btn-primary:hover { background: var(--blue-hover); }
-
-  /* WHAT WE DO */
-  .what-we-do {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .section-label {
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-  }
-
-  .what-we-do h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(22px, 4vw, 32px);
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.25;
-    margin-bottom: 1.5rem;
-  }
-
-  .what-we-do p {
-    font-size: 16px;
-    color: var(--text-light);
-    line-height: 1.8;
-    margin-bottom: 1.25rem;
-    max-width: 640px;
-  }
-
-  .what-we-do p:last-child { margin-bottom: 0; }
-
-  .pillars {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 4rem;
-    padding-top: 4rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .pillar {
-    padding-top: 1.25rem;
-    border-top: 2px solid var(--blue);
-  }
-
-  .pillar h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.75rem;
-  }
-
-  .pillar p {
-    font-size: 14px;
-    color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 0;
-  }
-
-  /* WHO ITS FOR */
-  .who-its-for {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .who-its-for h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(22px, 4vw, 32px);
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.25;
-    margin-bottom: 1.5rem;
-  }
-
-  .who-its-for p {
-    font-size: 16px;
-    color: var(--text-light);
-    line-height: 1.8;
-    margin-bottom: 1.25rem;
-  }
-
-  .signals-list {
-    list-style: none;
-    margin-top: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .signals-list li {
-    font-size: 15px;
-    color: var(--text-light);
-    line-height: 1.6;
-    padding-left: 1.25rem;
-    position: relative;
-  }
-
-  .signals-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 6px;
-    height: 6px;
-    background: var(--blue);
-    border-radius: 50%;
-  }
-
-  /* ASSESSMENT CTA */
-  .assessment-cta {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .cta-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-
-  .cta-box-left h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(20px, 3vw, 26px);
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.75rem;
-    line-height: 1.25;
-  }
-
-  .cta-box-left p {
-    font-size: 15px;
-    color: var(--text-light);
-    line-height: 1.7;
-    max-width: 480px;
-    margin: 0;
-  }
-
-  /* BLOG */
-  .blog-section {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .blog-section h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(22px, 4vw, 32px);
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.5rem;
-  }
-
-  .blog-section .section-sub {
-    font-size: 16px;
-    color: var(--text-muted);
-    margin-bottom: 3rem;
-  }
-
-  .blog-placeholder {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  .blog-card {
-    padding: 1.5rem;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    background: var(--surface);
-  }
-
-  .blog-card-tag {
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--blue);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-  }
-
-  .blog-card h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.4;
-    margin-bottom: 0.5rem;
-  }
-
-  .blog-card p {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    padding: 3rem 2rem;
-  }
-
-  .footer-inner {
-    max-width: 1080px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-
-  .footer-logo {
-    height: 28px;
-    width: auto;
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-  }
-
-  .footer-links a {
-    font-size: 13px;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-
-  .footer-links a:hover { color: var(--text); }
-
-  .footer-copy {
-    font-size: 12px;
-    color: var(--text-muted);
-    width: 100%;
-  }
-
-  .nav-hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    z-index: 101;
-  }
-
-  .nav-hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--text);
-    border-radius: 2px;
-  }
-
-  @media (max-width: 768px) {
-    .pillars { grid-template-columns: 1fr; }
-    .cta-box { flex-direction: column; align-items: flex-start; }
-    .nav-hamburger { display: flex; }
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: fixed;
-      top: 64px;
-      left: 0;
-      right: 0;
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 2rem;
-      gap: 1.25rem;
-      z-index: 99;
-      list-style: none;
-    }
-    .nav-links.open { display: flex; }
-    .nav-links a { font-size: 16px; }
-  }
-</style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEY0P46N78"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LEY0P46N78');
+</script>
 </head>
 <body>
-
-<!-- NAV -->
-<nav aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="/"><img src="/LN-assets/logic%20nerds%20og%20icon.png" alt="Logic Nerds" class="nav-logo"></a>
-    <button class="nav-hamburger" onclick="toggleNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/getaligned/" class="nav-cta">Get Aligned</a></li>
-    </ul>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/logic-nerds-mark.png" alt="" width="44" height="26">Logic Nerds</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/setup/">Custom Builds</a></li>
+        <li><a href="/reports/">Report Packs</a></li>
+        <li><a class="btn" href="https://calendar.app.google/puWBrE7kxSBasrjN8" target="_blank" rel="noopener">Book a call</a></li>
+      </ul>
+    </nav>
   </div>
-</nav>
+</header>
 
-<!-- HERO -->
-<section class="hero" aria-labelledby="hero-headline">
-  <div class="hero-inner">
-    <h1 id="hero-headline">Most revenue problems aren't where you think they are.</h1>
-    <p class="hero-sub">RevOps gurus love selling expensive automations and tech overhauls to fix deeper business problems. We don't. We partner with sales leaders to trace your revenue leaks back to their actual root cause and we fix the foundation first.</p>
-    <a href="/getaligned/" class="btn-primary">Take the Assessment</a>
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Salesforce work for small businesses, without the full-time admin or the agency retainer.</h1>
+      <p class="lead">Logic Nerds takes on focused, fixed-scope Salesforce projects. You know what you're getting and what it costs before work starts, you own everything when it's done, and nothing locks you in after.</p>
+      <div class="actions">
+        <a class="btn" href="https://calendar.app.google/puWBrE7kxSBasrjN8" target="_blank" rel="noopener">Book a call</a>
+        <a class="btn btn-quiet" href="/setup/">How custom builds work</a>
+      </div>
+    </div>
+    <a class="shot-img" href="/assets/img/dash-pipeline-health.png" target="_blank" rel="noopener" title="Open full size"><img src="/assets/img/dash-pipeline-health.png" width="1051" height="477" alt="Pipeline Health dashboard showing slipped, stale, past-due and incomplete deals, deals stuck 30+ days by stage, new pipeline by rep, and open pipeline by stage" loading="lazy" decoding="async"></a>
   </div>
 </section>
 
-<!-- WHAT WE DO -->
-<section class="what-we-do" aria-labelledby="what-headline">
-  <div class="section-inner">
-    <p class="section-label">What we do</p>
-    <h2 id="what-headline">You don't need a guru or consultant. You need a partner.</h2>
-    <p>Consultants force feed cookie cutter playbooks to companies in desperate need of real help. Whether you are scaling a SaaS recurring revenue model or managing complex CPG pipelines, our decade of experience has proven that one size doesn't even come close to fitting all.</p>
-    <p>The real solutions are rarely a tech stack overhaul and a slew of new automations. Those are band-aids. Our approach is focused on stabilizing the foundation of your team, and building from there.</p>
-    <p>We dig in to identify, and bridge the gaps between leaders and their teams.</p>
+<section class="band" aria-labelledby="model-h">
+  <div class="wrap split">
+    <h2 id="model-h">Project-based, not a retainer</h2>
+    <div class="measure">
+      <p>Most small businesses don't need a full-time Salesforce admin, and they definitely don't need to sign a retainer with an agency that bills every month whether there's work or not. They need someone to come in, build what's needed, and get out of the way.</p>
+      <p>That's how Logic Nerds works. Every engagement is a defined project with a clear scope and a fixed price. No monthly fees and no commitment beyond the project in front of you.</p>
+    </div>
+  </div>
+</section>
 
-    <div class="pillars">
-      <div class="pillar">
-        <h3>People first</h3>
-        <p>70% of CRM projects fail and it's not because of technology itself. The gap between the data leadership needs to make the right decisions and how the job presents itself on the ground isn't addressed with validation rules and automations. Most consultants want to rearrange your CRM. We work with you to identify the real gap and face it head on.</p>
-      </div>
-      <div class="pillar">
-        <h3>Process before technology</h3>
-        <p>The most successful sales teams are those that focus more on sound process than technology. In fact, teams that take the time to analyze their processes and workflows before making changes to their CRM or tech stack are 2x as likely to exceed expected ROI.</p>
-      </div>
-      <div class="pillar">
-        <h3>Data that actually reflects reality</h3>
-        <p>Only 3% of companies are working with data that meets basic quality standards. In fact, 79% of sales data doesn't even reach the CRM at all. This is usually because sales teams see it as an obstacle standing between them and their quota rather than a tool for reaching commission goals. Understanding and addressing where the CRM gets in the way delivers completion rates of over 85%, which means your strategic decisions are based on real insight, not forced compliance.</p>
+<section class="band band-surface" aria-labelledby="setup-h">
+  <div class="wrap split">
+    <h2 id="setup-h">What gets built</h2>
+    <div class="measure">
+      <ul class="plain">
+        <li>Reporting leadership can trust, including dashboards that go beyond what standard Salesforce reporting can do</li>
+        <li>Automation that takes the busywork off your team</li>
+        <li>The parts of Sales Cloud you're paying for but never set up</li>
+        <li>Custom MCP setups that connect Salesforce to AI tools, scoped so IT can sign off on them</li>
+        <li>New Salesforce orgs set up around how your team actually sells</li>
+      </ul>
+      <p style="margin-top:1.25rem">Projects start at $499, with a written scope and fixed price before any work starts.</p>
+      <div class="actions">
+        <a class="btn" href="https://calendar.app.google/puWBrE7kxSBasrjN8" target="_blank" rel="noopener">Book a call</a>
+        <a class="btn btn-quiet" href="/setup/">How custom builds work</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHO WE WORK BEST WITH -->
-<section class="who-its-for" aria-labelledby="who-headline">
-  <div class="section-inner">
-    <p class="section-label">Who we work best with</p>
-    <h2 id="who-headline">For leaders who are done treating symptoms.</h2>
-    <p>For CEOs, founders, and sales leaders who have built a solid product, but are tired of wondering why a seemingly good strategy isn't translating into predictable rep execution.</p>
-
-    <ul class="signals-list">
-      <li>You know there's more your team could be getting out of the tools you've already invested in</li>
-      <li>Your process works, but adoption has never been quite where you want it</li>
-      <li>You're hitting some of your targets but the consistency isn't there</li>
-      <li>Leadership and the team are generally aligned, but the details don't always connect</li>
-      <li>You've made changes that helped, but the same conversations keep coming up</li>
-      <li>Your data is mostly reliable, but you know there are gaps</li>
-      <li>You have a sense of where the opportunity is, you just haven't had the right outside perspective to confirm it</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ASSESSMENT CTA -->
-<section class="assessment-cta" aria-labelledby="cta-headline">
-  <div class="section-inner">
-    <div class="cta-box">
-      <div class="cta-box-left">
-        <h2 id="cta-headline">Not sure where to start?</h2>
-        <p>Take our Revenue Alignment Assessment to help identify the gaps that are holding you and your team back. It's free and it only takes 4 minutes.</p>
-      </div>
-      <a href="/getaligned/" class="btn-primary" style="white-space:nowrap;">Get Aligned</a>
+<section class="band" aria-labelledby="packs-h">
+  <div class="wrap split">
+    <h2 id="packs-h">Or start with a report pack</h2>
+    <div>
+      <p class="measure">Not ready for a project? Each pack is a set of reports and dashboards for one part of your sales process, built for Salesforce Professional Edition and up, that you install yourself. Every pack includes Rep-Level Personal reports so team members can track their own numbers, and a guide on how to act on what the reports show.</p>
+      <ul class="pricelist" style="margin-top:2rem">
+          <li>
+            <div>
+              <h3><a href="/reports/pipeline-health/">Pipeline Health</a></h3>
+              <p>What's open, what's stuck, and what's slipping.</p>
+            </div>
+            <span class="price">$29</span>
+            <a href="/reports/pipeline-health/">Details</a>
+          </li>
+          <li>
+            <div>
+              <h3><a href="/reports/win-loss-velocity/">Win/Loss &amp; Velocity</a></h3>
+              <p>Why you win, why you lose, and how long deals take to get there.</p>
+            </div>
+            <span class="price">$29</span>
+            <a href="/reports/win-loss-velocity/">Details</a>
+          </li>
+          <li>
+            <div>
+              <h3><a href="/reports/leads-top-of-funnel/">Leads &amp; Top of Funnel</a></h3>
+              <p>Where leads come from, how fast they get worked, and which ones are going stale.</p>
+            </div>
+            <span class="price">$29</span>
+            <a href="/reports/leads-top-of-funnel/">Details</a>
+          </li>
+          <li>
+            <div>
+              <h3><a href="/reports/accounts-activity/">Accounts &amp; Activity</a></h3>
+              <p>Which customers are getting attention and which ones have gone quiet.</p>
+            </div>
+            <span class="price">$29</span>
+            <a href="/reports/accounts-activity/">Details</a>
+          </li>
+          <li class="bundle">
+            <div>
+              <h3>All four packs</h3>
+              <p>About the price of three, so the fourth is on us.</p>
+            </div>
+            <span class="price">$89</span>
+            <a class="btn" href="#" data-buy="all-four">Buy all four</a>
+          </li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- BLOG -->
-<!-- Blog section placeholder - content to be added later -->
+<section class="band" aria-labelledby="safe-h">
+  <div class="wrap split">
+    <h2 id="safe-h">Built to stay out of your way</h2>
+    <div class="measure">
+      <p>Your org already has years of fields, reports and habits in it. The packs are built so nothing collides with what's there.</p>
+      <ul class="plain">
+        <li>Every field and component included is labeled to avoid collision with any already-existing ones of the same name.</li>
+        <li>Nothing changes your existing fields or data.</li>
+        <li>Switch off any components you don't want.</li>
+        <li>Works on Professional Edition and up.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <img src="/LN-assets/logic%20nerds%20og%20icon.png" alt="Logic Nerds" class="footer-logo">
-    <ul class="footer-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/getaligned/">Get Aligned</a></li>
-      <li><a href="mailto:elijah@logicnerds.net">Contact</a></li>
+<section class="band" aria-labelledby="about-h">
+  <div class="wrap split">
+    <h2 id="about-h">Who you're working with</h2>
+    <div class="measure">
+        <p>Logic Nerds is run by Elijah Mattox, who has spent more than a decade inside sales organizations: selling, leading teams, and building the Salesforce systems behind them. That's why every build starts with how your team actually sells.</p>
+        <p>You work directly with Elijah, from the first call to the handoff.</p>
+        <div class="inline-links">
+          <a href="https://www.linkedin.com/in/elijahmattox/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:elijah@logicnerds.net">elijah@logicnerds.net</a>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="band band-surface" aria-labelledby="faq-h">
+  <div class="wrap split">
+    <h2 id="faq-h">Questions</h2>
+    <div class="faq measure">
+      <details>
+        <summary>Do I have to sign a retainer?</summary>
+        <div><p>No. Every custom build is a single project with a written scope and a fixed price. When it's done, it's done. If you need something else later, that's a new project, priced the same way.</p></div>
+      </details>
+      <details>
+        <summary>How long does it take to get a price?</summary>
+        <div><p>You'll have a written scope and fixed price within 2 to 5 business days of the intro call, depending on the size of the project.</p></div>
+      </details>
+      <details>
+        <summary>Which Salesforce editions do the packs work with?</summary>
+        <div><p>Professional Edition and up.</p></div>
+      </details>
+      <details>
+        <summary>Will installing a pack change or overwrite anything in my org?</summary>
+        <div><p>No. Everything a pack adds is labeled so it can't collide with what you already have, and nothing changes the data in your existing fields.</p></div>
+      </details>
+      <details>
+        <summary>Do I need a Salesforce admin to install it?</summary>
+        <div><p>You need someone with admin permissions in your org, but not a dedicated admin. The <a href="/install/">install guide</a> walks through every step. Most packs take about 30 minutes to install and set up.</p></div>
+      </details>
+      <details>
+        <summary>Do the packs use any flows?</summary>
+        <div><p>Only Leads &amp; Top of Funnel, which uses one record-triggered flow. Professional Edition allows five active flows of each type, so check what you already have running before you buy that pack. Each product page lists its flow count, and the <a href="/install/#flows">install guide</a> shows how to check.</p></div>
+      </details>
+      <details>
+        <summary>Are there any automations?</summary>
+        <div><p>A little, where it makes the reports trustworthy. Some packs make sure key deal details get filled in, like a reason on every lost deal, and the Leads pack records when each lead is first worked. Each pack's page says what it does, and any of it can be switched off after install.</p></div>
+      </details>
+      <details>
+        <summary>Can I change the reports after I install them?</summary>
+        <!-- TODO: confirm package type (unmanaged = fully editable) -->
+        <div><p>Yes. Once installed, they're regular reports and dashboards in your org. Edit them, clone them or delete what you don't need.</p></div>
+      </details>
+      <details>
+        <summary>I bought one pack. Can I upgrade to all four?</summary>
+        <div><p>Upgrade credits aren't automatic. <a href="mailto:elijah@logicnerds.net">Get in touch</a> and we'll look at your order.</p></div>
+      </details>
+      <details>
+        <summary>What if a pack isn't right for my org?</summary>
+        <div><p>See the <a href="/policies/#refunds">refund policy</a>, or <a href="mailto:elijah@logicnerds.net">get in touch</a>.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/logic-nerds-mark.png" alt="" width="44" height="26">Logic Nerds</a>
+    <ul>
+      <li><a href="/setup/">Custom Builds</a></li>
+      <li><a href="/reports/">Report Packs</a></li>
+      <li><a href="/install/">Install Guide</a></li>
+      <li><a href="/policies/">Policies</a></li>
+      <li><a href="mailto:elijah@logicnerds.net">elijah@logicnerds.net</a></li>
     </ul>
-    <p class="footer-copy">&copy; 2026 Logic Nerds. All rights reserved.</p>
+    <p class="copy">&copy; 2026 Logic Nerds. Salesforce is a trademark of Salesforce, Inc. Logic Nerds is not affiliated with or endorsed by Salesforce.</p>
   </div>
 </footer>
 
-<script>
-function toggleNav() {
-  document.getElementById('nav-links').classList.toggle('open');
-}
-</script>
+<script src="/assets/js/site.js"></script>
 </body>
 </html>

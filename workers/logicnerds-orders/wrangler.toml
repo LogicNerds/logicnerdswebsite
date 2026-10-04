@@ -1,0 +1,25 @@
+name = "logicnerds-orders"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# Keep variables edited in the Cloudflare dashboard (like install links)
+# when redeploying with wrangler.
+keep_vars = true
+
+[vars]
+ORDERS_FROM = "Logic Nerds <orders@logicnerds.net>"
+REPLY_TO = "elijah@logicnerds.net"
+NOTIFY_TO = "elijah@logicnerds.net"
+SITE_URL = "https://www.logicnerds.net"
+
+# Install links are set in the Cloudflare dashboard (Settings > Variables),
+# so they can be changed without touching code:
+#   LINK_PIPELINE_HEALTH
+#   LINK_WIN_LOSS_VELOCITY
+#   LINK_LEADS_TOP_OF_FUNNEL
+#   LINK_ACCOUNTS_ACTIVITY
+#
+# Secrets (never put these in this file):
+#   wrangler secret put STRIPE_SECRET_KEY
+#   wrangler secret put STRIPE_WEBHOOK_SECRET
+#   wrangler secret put RESEND_API_KEY
